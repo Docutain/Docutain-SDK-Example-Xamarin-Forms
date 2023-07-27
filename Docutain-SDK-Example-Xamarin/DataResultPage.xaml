@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="Docutain_SDK_Example_Xamarin.DataResultPage"
+             Title="DataResultPage"
+             Visual="Material"
+             ios:Page.UseSafeArea="true">
+
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView Padding="16">
+                <StackLayout>
+                    <Editor x:Name="Name1Entry" Placeholder="Name 1" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="Name2Entry" Placeholder="Name 2" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="Name3Entry" Placeholder="Name 3" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="ZipCodeEntry" Placeholder="Zip Code" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="CityEntry" Placeholder="City" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="StreetEntry" Placeholder="Street" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="PhoneEntry" Placeholder="Phone" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="CustomerIdEntry" Placeholder="Customer ID" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="IbanEntry" Placeholder="IBAN" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="BicEntry" Placeholder="BIC" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="DateEntry" Placeholder="Date" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="AmountEntry" Placeholder="Amount" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="InvoiceIdEntry" Placeholder="Invoice ID" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="ReferenceEntry" Placeholder="Reference" InputTransparent="True" IsVisible="False"/>
+                    <Editor x:Name="PaymentStateEntry" Placeholder="Payment State" InputTransparent="True" IsVisible="False"/>
+                </StackLayout>
+            </ScrollView>
+
+            <ActivityIndicator x:Name="activityIndicator"
+                IsRunning="True"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"/>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>

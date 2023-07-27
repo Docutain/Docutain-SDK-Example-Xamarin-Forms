@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Docutain_SDK_Example_Xamarin.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <!-- Pallete -->
+            <Color x:Key="TextColor">Black</Color>
+            <Color x:Key="TextColorDark">#DEFFFFFF</Color>          
+            <Color x:Key="primary">#4CAF50</Color>
+            <Color x:Key="primaryDark">#2a2a2a</Color>
+            <Color x:Key="onPrimary">#FFFFFFFF</Color>
+            <Color x:Key="onPrimaryDark">#DEFFFFFF</Color>
+            <Color x:Key="pageBackground">#FFFFFFFF</Color>
+            <Color x:Key="pageBackgroundDark">#FF000000</Color>
+            <Color x:Key="placeholderColor">#FF000000</Color>
+            <Color x:Key="placeholderColorDark">#BFFFFFFF</Color>
+            <Color x:Key="editorBackgroundColor">#1A000000</Color>
+            <Color x:Key="editorBackgroundColorDark">#2a2a2a</Color>
+
+            <!-- Pallete-end -->
+
+            <Style ApplyToDerivedTypes="true" TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{AppThemeBinding Light={StaticResource primary}, Dark={StaticResource primaryDark}}"/>
+                <Setter Property="BarTextColor" Value="{AppThemeBinding Light={StaticResource onPrimary}, Dark={StaticResource onPrimaryDark}}"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource pageBackground}, Dark={StaticResource pageBackgroundDark}}"/>
+            </Style>
+
+            <Style TargetType="ActivityIndicator">
+                <Setter Property="Color" Value="{StaticResource primary}"/>
+                <Setter Property="WidthRequest" Value="48"/>
+                <Setter Property="HeightRequest" Value="48"/>
+            </Style>
+            
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColor}, Dark={StaticResource TextColorDark}}"/>
+            </Style>
+
+            <Style TargetType="Editor">
+                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource TextColor}, Dark={StaticResource TextColorDark}}"/>
+                <Setter Property="PlaceholderColor" Value="{AppThemeBinding Light={StaticResource placeholderColor}, Dark={StaticResource placeholderColorDark}}"/>
+                <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource editorBackgroundColor}, Dark={StaticResource editorBackgroundColorDark}}"/>
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

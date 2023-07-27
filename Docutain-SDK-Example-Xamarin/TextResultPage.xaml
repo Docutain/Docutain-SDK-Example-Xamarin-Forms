@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="Docutain_SDK_Example_Xamarin.TextResultPage"
+             Title="TextResultPage"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView Padding="16">
+                <Label x:Name="resultLabel"/>
+            </ScrollView>
+            <ActivityIndicator x:Name="activityIndicator" IsRunning="True" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
