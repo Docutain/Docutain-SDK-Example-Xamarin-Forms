@@ -145,8 +145,8 @@ namespace Docutain_SDK_Example_Xamarin
             }
             else if (action == AppResources.input_option_image)
             {
-                var result = await PickAndShow(FilePickerFileType.Images);
-                return (result, result == null ? true : false);
+                await StartScan(true);
+                return (null, false);
             }
             else if (action == AppResources.input_option_PDF)
             {
@@ -156,17 +156,18 @@ namespace Docutain_SDK_Example_Xamarin
             return (null, true);
         }
 
-        private async Task<bool> StartScan()
+        private async Task<bool> StartScan(bool importImage = false)
         {
             // Define a DocumentScannerConfiguration to alter the scan process and define a custom theme to match your branding
             var scanConfig = new DocumentScannerConfiguration();
             scanConfig.AllowCaptureModeSetting = true; // defaults to false
-            scanConfig.PageEditConfig.AllowPageFilter = true; // defaults to true
-            scanConfig.PageEditConfig.AllowPageRotation = true; // defaults to true
-            // alter the onboarding image source if you like
-            //scanConfig.OnboardingImageSource = ...
-
-            // detailed information about theming possibilities can be found here: https://docs.docutain.com/docs/Xamarin/theming
+            scanConfig.PageEditConfig.PageArrangementShowDeleteButton = true; // defaults to false
+            if (importImage)
+                scanConfig.Source = Source.GalleryMultiple;
+            //detailed information about possibilities to change the default scan behaviour can be found here:
+            //https://docs.docutain.com/docs/Xamarin/docScan#change-default-scan-behaviour
+            //detailed information about theming possibilities can be found here:
+            //https://docs.docutain.com/docs/Xamarin/theming
             return await UI.ScanDocument(scanConfig);
         }
 

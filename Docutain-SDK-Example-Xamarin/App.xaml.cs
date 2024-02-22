@@ -9,8 +9,8 @@ using Xamarin.Essentials;
 namespace Docutain_SDK_Example_Xamarin
 {
     public partial class App : Application
-    {        
-        string licenseKey = "YOUR_LICENSE_KEY_HERE";
+    {
+        string licenseKey = "YOUR_LICENSE_KEY_HERE";        
 
         public App()
         {
@@ -29,8 +29,8 @@ namespace Docutain_SDK_Example_Xamarin
                     return;
                 }
             }
-            //If you want to use text detection (OCR) and/or data extraction features, you need to set the AnalyzeConfiguration
-            //in order to start all the necessary processes
+            //If you are using data extraction features, you can activate optional values
+            //see https://docs.docutain.com/docs/Xamarin/dataExtraction for more details
             var analyzeConfig = new AnalyzeConfiguration
             {
                 ReadBIC = true, //defaults to false
@@ -64,10 +64,17 @@ namespace Docutain_SDK_Example_Xamarin
 
         private async void ShowLicenseEmptyInfo()
         {
-            if(await Current.MainPage.DisplayAlert("License empty", "A valid license key is required. Please contact us via sdk@Docutain.com to get a trial license.", "Get License", "Cancel"))
+            if (await Current.MainPage.DisplayAlert("License empty", "A valid license key is required. Please click \"Get License\" in order to create a free trial license key on our website.", "Get License", "Cancel"))
             {
-                var mail = new EmailMessage("Trial License Request Xamarin.Forms", "", new[] { "sdk@Docutain.com" });
-                await Email.ComposeAsync(mail);                
+                try
+                {
+                    await Browser.OpenAsync("https://sdk.docutain.com/TrialLicense?Source=1442309", BrowserLaunchMode.External);
+                }
+                catch (Exception ex)
+                {
+                    // An unexpected error occured. No browser may be installed on the device.
+                    System.Console.WriteLine("Open Browser failed: " + ex.ToString());
+                }
             }
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
