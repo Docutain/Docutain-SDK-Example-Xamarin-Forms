@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Docutain_SDK_Example_Xamarin.SettingsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:c="clr-namespace:Docutain_SDK_Example_Xamarin.Controls"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    Title="SettingsPage">
+    <ContentPage.Content>
+        <TableView HasUnevenRows="true" Intent="Settings">
+            <TableRoot>
+                <TableSection x:Name="ColorSettingSection" Title="Color settings" />
+                <TableSection x:Name="ScanSettingSection" Title="Scan settings" />
+                <TableSection x:Name="EditSettingSection" Title="Edit settings" />
+                <TableSection x:Name="ResetSettingSection" Title="Reset to default">
+                    <ViewCell>
+                        <Button
+                                x:Name="bt_Reset"
+                                Margin="10"
+                                Clicked="bt_Reset_Clicked"
+                                Text="Reset" />
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

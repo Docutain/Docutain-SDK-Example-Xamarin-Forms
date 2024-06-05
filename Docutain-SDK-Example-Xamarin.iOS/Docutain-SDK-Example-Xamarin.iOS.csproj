@@ -131,7 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Docutain.SDK.Xamarin.Forms">
-      <Version>1.1.0</Version>
+      <Version>1.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="DocutainColorPicker">
+      <Version>1.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2622" />
     <PackageReference Include="Xamarin.Essentials" Version="1.8.1" />
@@ -169,5 +172,9 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\quick_reference_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\settings_black.png" />
+    <Content Include="Resources\settings_white.png" />
   </ItemGroup>
 </Project>
